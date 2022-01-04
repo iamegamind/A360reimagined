@@ -5,14 +5,24 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-import { HeaderComponent } from './header/header.component';
+import {HeaderComponent} from './header/header.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { HeroComponent } from './hero/hero.component';
-import { DemoComponent } from './demo/demo.component';
-import { ServicesComponent } from './services/services.component';
-import { ServiceCardComponent } from './services/service-card/service-card.component';
-import { FeaturesComponent } from './features/features.component';
+import {HeroComponent} from './hero/hero.component';
+import {DemoComponent} from './demo/demo.component';
+import {ServicesComponent} from './services/services.component';
+import {ServiceCardComponent} from './services/service-card/service-card.component';
+import {FeaturesComponent} from './features/features.component';
 import {CommonModule} from '@angular/common';
+import {ContactUsComponent} from './contact-us/contact-us.component';
+import {ContactComponent} from './contact/contact.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCardModule} from '@angular/material/card';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +32,10 @@ import {CommonModule} from '@angular/common';
     DemoComponent,
     ServicesComponent,
     ServiceCardComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    ContactUsComponent,
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +43,14 @@ import {CommonModule} from '@angular/common';
     MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
-    CommonModule
+    CommonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]

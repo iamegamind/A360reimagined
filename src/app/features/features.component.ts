@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Feature} from '../model/feature';
 
 @Component({
@@ -6,7 +6,7 @@ import {Feature} from '../model/feature';
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.scss']
 })
-export class FeaturesComponent implements OnInit {
+export class FeaturesComponent {
 
   features: Feature[] = [
     {
@@ -25,13 +25,6 @@ export class FeaturesComponent implements OnInit {
       text: 'We make sure that each event has different and royalty-free soundtracks! We take the theme of your event and create perfect music to match.'
     }
     , {title: 'Studio lighting', text: 'We provide LED studio lighting to enhance the quality of the videos'}
-
   ]
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
 }
