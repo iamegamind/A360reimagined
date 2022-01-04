@@ -1,0 +1,12 @@
+<div class="service-card activations" fxLayout="column" fxLayoutAlign=" center"
+     [style.background-color]="serviceMetadata.cardColor">
+  <div class="image">
+    <img [src]="serviceMetadata.imageUrl" alt="">
+  </div>
+  <div class="content" fxLayout="column" fxLayoutAlign=" center">
+    <div class="card-header" [style.color]="serviceMetadata.textColor">{{serviceMetadata.cardTitle}}</div>
+    <div class="card-body" [style.color]="serviceMetadata.textColor">
+      {{serviceMetadata.cardDescription}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="16px">
+  <div class="header">Features</div>
+
+  <div class="features" fxLayout="row" fxLayoutAlign=" center">
+
+    <div class="image">
+      <img src="assets/features.png">
+    </div>
+
+    <div class="text">
+
+      <ng-template ngFor let-feature [ngForOf]="features">
+        <div class="feature-header">{{feature.title}}</div>
+        <p class="feature-text">
+          {{feature.text}}}
+        </p>
+      </ng-template>
+    </div>
+  </div>
+</div>
