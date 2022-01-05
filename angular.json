@@ -109,7 +109,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://angular-schule.github.io/A360reimagined/"
+            "baseHref": "https://iamegamind.github.io/A360reimagined/"
           }
         }
       }
