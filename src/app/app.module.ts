@@ -13,7 +13,6 @@ import {ServicesComponent} from './services/services.component';
 import {ServiceCardComponent} from './services/service-card/service-card.component';
 import {FeaturesComponent} from './features/features.component';
 import {CommonModule} from '@angular/common';
-import {ContactUsComponent} from './contact-us/contact-us.component';
 import {ContactComponent} from './contact/contact.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -22,7 +21,9 @@ import {MatCardModule} from '@angular/material/card';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { FooterComponent } from './footer/footer.component';
+import {FooterComponent} from './footer/footer.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,6 @@ import { FooterComponent } from './footer/footer.component';
     ServicesComponent,
     ServiceCardComponent,
     FeaturesComponent,
-    ContactUsComponent,
     ContactComponent,
     FooterComponent
   ],
@@ -50,7 +50,9 @@ import { FooterComponent } from './footer/footer.component';
     MatCardModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -1,5 +1,5 @@
 .hero {
-  padding: 64px 64px 16px 64px;
+  //padding: 64px 64px 16px 64px;
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: 1fr;
@@ -10,7 +10,7 @@
   .text-area {
     grid-area: text-area;
 
-    .text {
+    .header-text {
       font-size: 30px;
       font-weight: bold;
       color: rgb(82, 77, 77);
@@ -18,12 +18,14 @@
       margin-bottom: 32px;
     }
 
-    .actions {
-      .mat-flat-button {
-        border-radius: 60px;
-        background-color: #76c463;
-        color: white;
-      }
+
+  }
+
+  .actions {
+    .mat-flat-button {
+      border-radius: 60px;
+      background-color: #76c463;
+      color: white;
     }
   }
 

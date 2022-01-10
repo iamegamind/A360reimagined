@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  mailJetBaseUrl: 'https://api.mailjet.com/v3.1/'
+
 };

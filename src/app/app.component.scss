@@ -1,10 +1,15 @@
-.container {
-  app-header {
+app-header {
+}
+
+.body {
+
+}
+
+mat-sidenav-container {
+  min-height: 100vh;
+
+  mat-sidenav-container {
+    min-height: 100vh;
   }
 
-  .body {
-
-
-
-  }
 }

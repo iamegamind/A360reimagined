@@ -1,19 +1,29 @@
-<div class="header">
+<div class="header p-8  sm:p-10">
   <mat-toolbar>
     <img class="logo" alt="logo" src="assets/logo.svg">
     <span class="example-spacer"></span>
 
-    <button mat-button>
-      HOME
-    </button>
-    <button mat-button>
-      SERVICES
-    </button>
-    <button mat-button>
-      FEATURES
-    </button>
-    <button mat-button>
-      CONTACT US
-    </button>
+    <div class="hidden lg:block">
+      <button mat-button>
+        HOME
+      </button>
+      <button mat-button>
+        SERVICES
+      </button>
+      <button mat-button>
+        FEATURES
+      </button>
+      <button mat-button>
+        CONTACT US
+      </button>
+    </div>
+
+    <div class="menu_icon w-40 visible lg:invisible"
+         [class.clicked]="isMenuOpen" (click)="toggleMenu()">
+      <span class="one"></span>
+      <span class="two"></span>
+      <span class="three"></span>
+    </div>
+
   </mat-toolbar>
 </div>

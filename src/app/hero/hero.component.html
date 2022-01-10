@@ -1,22 +1,25 @@
-<div class="hero" fxLayout="column" fxLayoutAlign=" center">
-  <div fxLayout="row" fxLayoutAlign=" none">
+<div class="hero p-8  sm:p-10" fxLayout="column" fxLayoutAlign=" center">
+  <div class="flex flex-col gap-6">
+
     <div class="text-area" fxLayout="column" fxLayoutAlign="center none">
-      <div class="text">
+      <div class="leading-none font-extrabold text-[40px]">
         FEATURE OUR 360 VIDEO BOOTH FOR YOUR NEXT EVENT
-      </div>
-      <div class="actions">
-        <button mat-flat-button>
-          Get Quote
-        </button>
       </div>
     </div>
 
     <div class="image">
       <img src="assets/hero.svg" alt="hero image">
     </div>
+
+    <div class="actions flex justify-center">
+      <button class="w-4/5" mat-flat-button>
+        Get Quote
+      </button>
+    </div>
+
   </div>
-  <div class="hero-arrow" fxLayout="column" fxLayoutAlign="center none">
-    <img alt="down arrow" src="assets/down-arrow.svg">
+  <div class="hero-arrow " fxLayout="column" fxLayoutAlign="center none">
+    <img alt="down arrow" class="animate-bounce" (click)="scrollToContact()" src="assets/down-arrow.svg">
   </div>
 
   <div class="shape-blob"></div>
