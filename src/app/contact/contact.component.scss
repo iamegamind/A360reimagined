@@ -36,7 +36,14 @@
       background-color: #76c463;
       color: white;
     }
+
+    .mat-button-disabled {
+      background-color: #adadad;
+    }
   }
 }
 
+textarea {
+  resize: none;
+}
 

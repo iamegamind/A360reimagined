@@ -24,6 +24,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {FooterComponent} from './footer/footer.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {NgxMaskModule} from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {MatListModule} from '@angular/material/list';
     FooterComponent
   ],
   imports: [
+    NgxMaskModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,

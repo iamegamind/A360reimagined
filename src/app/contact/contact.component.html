@@ -1,25 +1,31 @@
 <div id="contact" class="cont p-8 sm:p-10 w-screen">
 
-  <div class="header text-4xl font-bold text-left text-header-green">
+  <div class="header text-4xl mb-4 font-bold text-left text-header-green">
     Contact Us
   </div>
 
   <div class="content">
 
-    <form [formGroup]="contactForm" novalidate (ngSubmit)="onSubmit()">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
       <div class="md:row">
         <div class="w-full md:col">
           <mat-form-field class="full-width" color="primary">
-            <input matInput placeholder="Full Name" formControlName="fullName">
+            <input matInput placeholder="Full Name"
+                   formControlName="fullName">
           </mat-form-field>
         </div>
 
         <div class="md:col">
           <mat-form-field class="full-width" color="primary">
-            <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+            <input matInput placeholder="Phone Number"
+                   mask="000 000 0000"
+                   formControlName="phoneNumber">
             <mat-error *ngIf="contactForm.controls['phoneNumber'].hasError('required')">
               Phone number is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="contactForm.controls['phoneNumber'].hasError('pattern')">
+              Please enter a <strong>valid</strong> phone number
             </mat-error>
           </mat-form-field>
         </div>
@@ -29,17 +35,23 @@
 
         <div class="md:col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Email" formControlName="email">
+            <input matInput placeholder="Email"
+                   formControlName="email">
             <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
               Email address is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="contactForm.controls['email'].hasError('email')">
+              Please enter a <strong>valid</strong> email
             </mat-error>
           </mat-form-field>
         </div>
 
         <div class="md:col">
           <mat-form-field class="full-width">
-            <mat-select placeholder="Message Subject" formControlName="messageSubject">
-              <mat-option *ngFor="let messageSubject of messageSubjects" [value]="messageSubject">
+            <mat-select placeholder="Message Subject"
+                        formControlName="messageSubject">
+              <mat-option *ngFor="let messageSubject of messageSubjects"
+                          [value]="messageSubject">
                 {{ messageSubject }}
               </mat-option>
             </mat-select>
@@ -56,8 +68,10 @@
 
         <div class="md:col" *ngIf="isBooking() || isPricingEnquiry()">
           <mat-form-field class="full-width">
-            <mat-select placeholder="Type of Function" formControlName="eventType">
-              <mat-option *ngFor="let event of eventTypes" [value]="event">
+            <mat-select placeholder="Type of Function"
+                        formControlName="eventType">
+              <mat-option *ngFor="let event of eventTypes"
+                          [value]="event">
                 {{ event }}
               </mat-option>
             </mat-select>
@@ -69,7 +83,8 @@
 
         <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Venue" formControlName="venue">
+            <input matInput placeholder="Venue"
+                   formControlName="venue">
             <mat-error *ngIf="contactForm.controls['venue'].hasError('required')">
               Venue is <strong>required</strong>
             </mat-error>
@@ -80,9 +95,12 @@
       <div class="md:row">
         <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Hours" formControlName="hours">
+            <input matInput placeholder="Number of hours"
+                   mask="00"
+                   [showMaskTyped]="true"
+                   formControlName="hours">
             <mat-error *ngIf="contactForm.controls['hours'].hasError('required')">
-              Hours is <strong>required</strong>
+              Hours are <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -90,9 +108,12 @@
         <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
           <mat-form-field class="full-width" appearance="fill">
             <mat-label>Date</mat-label>
-            <input matInput formControlName="date" [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput
+                   formControlName="date"
+                   [matDatepicker]="picker" >
+            <mat-datepicker-toggle matSuffix [for]="picker">
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
           </mat-form-field>
 
         </div>
@@ -103,7 +124,8 @@
 
         <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
           <mat-form-field class="full-width">
-            <textarea type="text" matInput
+            <textarea type="text" matInput rows="6"
+                      style="resize: none"
                       placeholder="Your Requirements"
                       formControlName="requirements">
             </textarea>
@@ -113,7 +135,8 @@
         <div class="md:col"
              *ngIf="isShowMessageField()">
           <mat-form-field class="full-width">
-            <textarea type="text" matInput
+            <textarea type="text" matInput rows="6"
+                      style="resize: none"
                       [placeholder]="determineMessagePlaceholder()"
                       formControlName="message">
             </textarea>
@@ -123,11 +146,17 @@
 
       <div class="actions flex justify-center">
         <button mat-flat-button color="primary"
-                class="w-4/5" type="submit">
+                class="w-4/5" type="submit"
+                [disabled]="!contactForm.valid">
           Submit
         </button>
       </div>
 
     </form>
   </div>
+
+<!--  {{contactForm.value | json}}-->
+<!--  <br/>-->
+<!--  <br/>-->
+<!--  valid: {{contactForm.valid}}-->
 </div>

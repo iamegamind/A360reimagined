@@ -4,9 +4,17 @@
 @tailwind utilities;
 html, body {
   height: 100%;
+  max-width: 100%;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  //max-width: 100%;
+  //overflow-x: hidden;
 }

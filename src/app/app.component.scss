@@ -10,6 +10,13 @@ mat-sidenav-container {
 
   mat-sidenav-container {
     min-height: 100vh;
+    max-width: 100vw;
+
+    mat-sidenav-content {
+      .content {
+        max-width: 100vw;
+      }
+    }
   }
 
 }
