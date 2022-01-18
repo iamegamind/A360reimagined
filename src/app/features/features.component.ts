@@ -11,7 +11,7 @@ export class FeaturesComponent {
   features: Feature[] = [
     {
       title: 'Microsite',
-      text: 'Once guests take their photo, they are able to text their photo to themselves and brought to an immersive microsite continuing the branding of the event. The microsite is primed to have guests share on their social media right from their phone.'
+      text: 'Once guests take their video, they are able to access and download their videos on the branded microsite created for the event.The Microsite is primed to have guests share on their social media platforms right from their phones.'
     },
     {
       title: 'Live texting',

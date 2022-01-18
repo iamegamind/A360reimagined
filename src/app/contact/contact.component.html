@@ -1,6 +1,6 @@
-<div id="contact" class="cont p-8  sm:p-10">
+<div id="contact" class="cont p-8 sm:p-10 w-screen">
 
-  <div class="header">
+  <div class="header text-4xl font-bold text-left text-header-green">
     Contact Us
   </div>
 
@@ -8,14 +8,14 @@
 
     <form [formGroup]="contactForm" novalidate (ngSubmit)="onSubmit()">
 
-      <div class="row">
-        <div class="col">
+      <div class="md:row">
+        <div class="w-full md:col">
           <mat-form-field class="full-width" color="primary">
             <input matInput placeholder="Full Name" formControlName="fullName">
           </mat-form-field>
         </div>
 
-        <div class="col">
+        <div class="md:col">
           <mat-form-field class="full-width" color="primary">
             <input matInput placeholder="Phone Number" formControlName="phoneNumber">
             <mat-error *ngIf="contactForm.controls['phoneNumber'].hasError('required')">
@@ -25,9 +25,9 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="md:row">
 
-        <div class="col">
+        <div class="md:col">
           <mat-form-field class="full-width">
             <input matInput placeholder="Email" formControlName="email">
             <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
@@ -35,7 +35,59 @@
             </mat-error>
           </mat-form-field>
         </div>
-        <div class="col">
+
+        <div class="md:col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Message Subject" formControlName="messageSubject">
+              <mat-option *ngFor="let messageSubject of messageSubjects" [value]="messageSubject">
+                {{ messageSubject }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="contactForm.controls['messageSubject'].hasError('required')">
+              Message Subject is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+
+      <div class="md:row">
+
+        <div class="md:col" *ngIf="isBooking() || isPricingEnquiry()">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Type of Function" formControlName="eventType">
+              <mat-option *ngFor="let event of eventTypes" [value]="event">
+                {{ event }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="contactForm.controls['eventType'].hasError('required')">
+              Event type is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Venue" formControlName="venue">
+            <mat-error *ngIf="contactForm.controls['venue'].hasError('required')">
+              Venue is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="md:row">
+        <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Hours" formControlName="hours">
+            <mat-error *ngIf="contactForm.controls['hours'].hasError('required')">
+              Hours is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
           <mat-form-field class="full-width" appearance="fill">
             <mat-label>Date</mat-label>
             <input matInput formControlName="date" [matDatepicker]="picker">
@@ -47,64 +99,35 @@
       </div>
 
 
-      <div class="row">
+      <div class="md:row">
 
-        <div class="col">
+        <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
           <mat-form-field class="full-width">
-            <mat-select placeholder="Type of Function" formControlName="eventType">
-              <mat-option *ngFor="let event of eventTypes" [value]="event">
-                {{ event }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="contactForm.controls['state'].hasError('required')">
-              State is <strong>required</strong>
-            </mat-error>
+            <textarea type="text" matInput
+                      placeholder="Your Requirements"
+                      formControlName="requirements">
+            </textarea>
           </mat-form-field>
         </div>
 
-        <div class="col">
+        <div class="md:col"
+             *ngIf="isShowMessageField()">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Venue" formControlName="fullName">
-          </mat-form-field>
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Hours" formControlName="hours">
-            <mat-error *ngIf="contactForm.controls['hours'].hasError('required')">
-              Hours is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-select placeholder="Add-on" formControlName="eventType">
-              <mat-option *ngFor="let event of eventTypes" [value]="event">
-                {{ event }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="contactForm.controls['state'].hasError('required')">
-              State is <strong>required</strong>
-            </mat-error>
+            <textarea type="text" matInput
+                      [placeholder]="determineMessagePlaceholder()"
+                      formControlName="message">
+            </textarea>
           </mat-form-field>
         </div>
       </div>
 
-
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea type="text" matInput placeholder="Your Requirements" formControlName="fullName"></textarea>
-          </mat-form-field>
-        </div>
-
+      <div class="actions flex justify-center">
+        <button mat-flat-button color="primary"
+                class="w-4/5" type="submit">
+          Submit
+        </button>
       </div>
 
-
-      <button mat-raised-button color="primary" type="submit">Submit</button>
     </form>
   </div>
 </div>
