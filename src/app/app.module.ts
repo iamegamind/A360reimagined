@@ -25,6 +25,8 @@ import {FooterComponent} from './footer/footer.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {NgxMaskModule} from 'ngx-mask';
+import {NgxCaptchaModule} from 'ngx-captcha';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import {NgxMaskModule} from 'ngx-mask';
     FooterComponent
   ],
   imports: [
+    NgxCaptchaModule,
     NgxMaskModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
@@ -54,7 +57,8 @@ import {NgxMaskModule} from 'ngx-mask';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]

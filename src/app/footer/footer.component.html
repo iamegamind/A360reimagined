@@ -1,3 +1,43 @@
-<div class="container">
+<div class="container p-8 bg-[#f6fadf] ">
 
+  <div class="social-contacts pb-8">
+    <div class="360 w-full text-2xl font-black text-center mb-4 text-[#1f1f1f]">
+      360 Reimagined
+    </div>
+    <div class="social-icons flex flex-row text-[28px] justify-center gap-4 text-[#93d580]">
+      <div class="facebook">
+        <a href="https://web.facebook.com/360-Reimagined-SA-108305945067485/">
+          <fa-icon [icon]="brandIcon.facebook"></fa-icon>
+        </a>
+      </div>
+      <div class="twitter">
+        <a href="https://twitter.com/360reimaginedsa">
+          <fa-icon [icon]="brandIcon.twitter"></fa-icon>
+        </a>
+      </div>
+      <div class="instagram">
+        <a href="https://www.instagram.com/360reimagined_sa/">
+          <fa-icon [icon]="brandIcon.instagram"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="legacy-contacts pb-8 text-[#525252]">
+    <div class="legacy-header text-2xl mb-4 ">Contact</div>
+    <div class="tel flex flex-row gap-4">
+      <fa-icon [icon]="legacyIcon.tel"></fa-icon>
+      <div>+27 82 061 2809</div>
+    </div>
+    <div class="email flex flex-row gap-4">
+      <fa-icon [icon]="legacyIcon.email"></fa-icon>
+      <div>
+        <a href="mailto:info@360reimagined.co.za">
+          info@360reimagined.co.za
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="license">All rights reserved. ©Copyright 2022</div>
 </div>

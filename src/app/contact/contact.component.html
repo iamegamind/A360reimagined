@@ -110,10 +110,10 @@
             <mat-label>Date</mat-label>
             <input matInput
                    formControlName="date"
-                   [matDatepicker]="picker" >
+                   [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker">
             </mat-datepicker-toggle>
-            <mat-datepicker #picker ></mat-datepicker>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
         </div>
@@ -144,6 +144,11 @@
         </div>
       </div>
 
+      <ngx-recaptcha2 [siteKey]="siteKey"
+                      [type]="'audio'"
+                      formControlName="reCaptcha">
+
+      </ngx-recaptcha2>
       <div class="actions flex justify-center">
         <button mat-flat-button color="primary"
                 class="w-4/5" type="submit"
@@ -153,10 +158,11 @@
       </div>
 
     </form>
+
   </div>
 
-<!--  {{contactForm.value | json}}-->
-<!--  <br/>-->
-<!--  <br/>-->
-<!--  valid: {{contactForm.valid}}-->
+<!--    {{contactForm.value | json}}-->
+<!--    <br/>-->
+<!--    <br/>-->
+<!--    valid: {{contactForm.valid}}-->
 </div>

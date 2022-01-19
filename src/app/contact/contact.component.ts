@@ -19,6 +19,7 @@ export class ContactComponent {
     'I\'m ready to book!',
     'Pricing Please'
   ]
+  siteKey = "6Les7yEeAAAAAEFs1SOfIykmoVsUh0dVt6Uv-pOs";
 
   constructor(private fb: FormBuilder) {
     this.trackFormValidity();
@@ -37,7 +38,8 @@ export class ContactComponent {
     venue: [null],
     hours: [null],
     requirements: [null],
-    message: [null]
+    message: [null],
+    reCaptcha: [null, Validators.required]
 
   });
 
