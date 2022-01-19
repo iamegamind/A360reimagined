@@ -1,25 +1,27 @@
 <div>
   <app-header class="absolute w-screen z-50"></app-header>
 
-
   <mat-sidenav-container>
-    <mat-sidenav [opened]="false"
+    <mat-sidenav [opened]="isSidenavOpen"
                  fixedInViewport="true"
-                 position="end" style="width: 300px;"
-                 fixedTopGap="88" (scroll)="close()">
+                 position="end"
+                 (scroll)="close()" disableClose>
       <mat-list>
+        <div class="h-[88px]">
+
+        </div>
         <mat-list-item>
-          <a mat-list-item>
+          <a mat-list-item (click)="scrollToElement('services')">
             SERVICES
           </a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-list-item>
+          <a mat-list-item (click)="scrollToElement('features')">
             FEATURES
           </a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-list-item>
+          <a mat-list-item (click)="scrollToElement('contact')">
             CONTACT US
           </a>
         </mat-list-item>

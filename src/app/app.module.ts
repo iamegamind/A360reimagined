@@ -27,6 +27,7 @@ import {MatListModule} from '@angular/material/list';
 import {NgxMaskModule} from 'ngx-mask';
 import {NgxCaptchaModule} from 'ngx-captcha';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {NgxPageScrollCoreModule} from 'ngx-page-scroll-core';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     NgxCaptchaModule,
+    NgxPageScrollCoreModule.forRoot({duration: 500,}),
     NgxMaskModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,

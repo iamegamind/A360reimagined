@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {PageScrollService} from 'ngx-page-scroll-core';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
   selector: 'app-hero',
@@ -6,12 +8,14 @@ import {Component} from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
+  constructor(private pageScrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
+  }
 
   scrollToContact() {
-    let el = document.getElementById('contact');
-    if (el) {
-      console.log('e')
-      el.scrollTop = el.scrollHeight;
-    }
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: '#contact',
+    });
   }
 }

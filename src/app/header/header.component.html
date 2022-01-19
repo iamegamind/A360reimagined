@@ -4,16 +4,16 @@
     <span class="example-spacer"></span>
 
     <div class="hidden lg:block">
-      <button mat-button>
+      <button mat-button >
         HOME
       </button>
-      <button mat-button>
+      <button mat-button (click)="scrollToElement('services')">
         SERVICES
       </button>
-      <button mat-button>
+      <button mat-button (click)="scrollToElement('features')">
         FEATURES
       </button>
-      <button mat-button>
+      <button mat-button (click)="scrollToElement('contact')">
         CONTACT US
       </button>
     </div>
