@@ -1,6 +1,6 @@
 <div id="contact" class="cont p-8 sm:p-10 w-screen">
 
-  <div class="header text-4xl mb-4 font-bold text-left text-header-green">
+  <div class="header tracking-tight text-4xl mb-4 font-bold text-left text-header-green self-start	">
     Contact Us
   </div>
 
@@ -13,6 +13,9 @@
           <mat-form-field class="full-width" color="primary">
             <input matInput placeholder="Full Name"
                    formControlName="fullName">
+            <mat-error *ngIf="contactForm.controls['fullName'].hasError('required')">
+              Full name is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </div>
 
@@ -161,8 +164,8 @@
 
   </div>
 
-<!--    {{contactForm.value | json}}-->
-<!--    <br/>-->
-<!--    <br/>-->
-<!--    valid: {{contactForm.valid}}-->
+  <!--    {{contactForm.value | json}}-->
+  <!--    <br/>-->
+  <!--    <br/>-->
+  <!--    valid: {{contactForm.valid}}-->
 </div>

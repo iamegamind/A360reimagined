@@ -1,5 +1,10 @@
 module.exports = {
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Helvetica Neue LT Std', 'sans-serif'],
+      },
+    },
     colors: {
       'header-green': '#76c463'
     }

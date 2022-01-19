@@ -1,5 +1,5 @@
 <div class="demo-section p-8  sm:p-10" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="16px">
-  <div class="demo-header text-4xl font-bold text-left">360 Video Booth</div>
+  <div class="demo-header text-4xl font-bold text-left tracking-tight self-start	">360 Video Booth</div>
 
   <div class="demo-description md:text-center leading-normal">
     Joburg was never ready!
@@ -7,7 +7,8 @@
     ensure that you look good at every angle.
   </div>
   <div class="demo-video">
-    <video width="305" height="540" autoplay playsinline loop muted class="rounded-lg">
+    <video width="305" height="540" autoplay playsinline loop
+           [muted]="isMuted" (click)="toggleMute()" class="rounded-lg">
       <source src="assets/360Re-ImaginedReel.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
