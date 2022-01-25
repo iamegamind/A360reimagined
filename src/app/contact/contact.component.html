@@ -153,11 +153,18 @@
 
       </ngx-recaptcha2>
       <div class="actions flex justify-center">
-        <button mat-flat-button color="primary"
-                class="w-4/5" type="submit"
-                [disabled]="!contactForm.valid">
+        <a mat-flat-button color="primary"
+           class="w-4/5" type="submit"
+           [disabled]="!contactForm.valid"
+           [href]="getMailHref()">
           Submit
-        </button>
+        </a>
+        <!--        <button mat-flat-button color="primary"-->
+        <!--                class="w-4/5" type="submit"-->
+        <!--                [disabled]="!contactForm.valid"-->
+        <!--        >-->
+        <!--          Submit-->
+        <!--        </button>-->
       </div>
 
     </form>
