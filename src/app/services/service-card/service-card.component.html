@@ -1,7 +1,11 @@
 <div class="service-card activations rounded-3xl" fxLayout="column" fxLayoutAlign=" center"
      [style.background-color]="serviceMetadata.cardColor">
   <div class="image">
-    <img [src]="serviceMetadata.imageUrl" alt="">
+    <picture>
+      <source [srcset]="serviceMetadata.compressedImageUrl" type="image/webp"/>
+      <img [src]="serviceMetadata.imageUrl" alt="">
+    </picture>
+<!--    <img [src]="serviceMetadata.imageUrl" alt="">-->
   </div>
   <div class="content" fxLayout="column" fxLayoutAlign=" center">
     <div class="card-header" [style.color]="serviceMetadata.textColor">

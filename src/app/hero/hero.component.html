@@ -20,7 +20,13 @@
 
   </div>
   <div class="hero-arrow " fxLayout="column" fxLayoutAlign="center none">
-    <img alt="down arrow" class="animate-bounce" (click)="scrollToContact()" src="assets/down-arrow.svg">
+    <picture>
+      <source srcSet="assets/down-arrow.webp" type="image/webp"
+              (click)="scrollToContact()"/>
+      <img alt="down arrow" class="animate-bounce"
+           (click)="scrollToContact()" src="assets/down-arrow.svg">
+    </picture>
+
   </div>
 
   <div class="shape-blob w-64 h-64 top-[10%] left-0"></div>

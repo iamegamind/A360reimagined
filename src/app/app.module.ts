@@ -26,44 +26,53 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {NgxMaskModule} from 'ngx-mask';
 import {NgxCaptchaModule} from 'ngx-captcha';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgxPageScrollCoreModule} from 'ngx-page-scroll-core';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HeroComponent,
-    DemoComponent,
-    ServicesComponent,
-    ServiceCardComponent,
-    FeaturesComponent,
-    ContactComponent,
-    FooterComponent
-  ],
-  imports: [
-    NgxCaptchaModule,
-    NgxPageScrollCoreModule.forRoot({duration: 500,}),
-    NgxMaskModule.forRoot(),
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    CommonModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSidenavModule,
-    MatListModule,
-    FontAwesomeModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
+            declarations: [
+              AppComponent,
+              HeaderComponent,
+              HeroComponent,
+              DemoComponent,
+              ServicesComponent,
+              ServiceCardComponent,
+              FeaturesComponent,
+              ContactComponent,
+              FooterComponent
+            ],
+            imports: [
+              NgxCaptchaModule,
+              NgxPageScrollCoreModule.forRoot({duration: 500,}),
+              NgxMaskModule.forRoot(),
+              BrowserModule,
+              BrowserAnimationsModule,
+              MatToolbarModule,
+              MatButtonModule,
+              FlexLayoutModule,
+              CommonModule,
+              MatInputModule,
+              MatSelectModule,
+              MatRadioModule,
+              MatCardModule,
+              ReactiveFormsModule,
+              MatDatepickerModule,
+              MatNativeDateModule,
+              MatSidenavModule,
+              MatListModule,
+              FontAwesomeModule,
+              ServiceWorkerModule.register('ngsw-worker.js', {
+                enabled: environment.production,
+                // Register the ServiceWorker as soon as the app is stable
+                // or after 30 seconds (whichever comes first).
+                registrationStrategy: 'registerWhenStable:30000'
+              }),
+
+            ],
+            providers: [],
+            bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]
+          })
 export class AppModule {
 }

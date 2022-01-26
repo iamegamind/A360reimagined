@@ -69,7 +69,7 @@ export class ContactComponent {
         if (value === ('Thanks!' || 'Looking For More Info' || 'I was not happy about something')) {
           this.contactForm.controls['message']?.setValidators([Validators.required]);
         } else if (value === ('I\'m ready to book!' || 'Pricing Please')) {
-          this.contactForm.controls['message']?.removeValidators(Validators.required);
+          this.contactForm.controls['message']?.clearValidators();
           this.contactForm.controls['date']?.setValidators([Validators.required]);
           this.contactForm.controls['eventType']?.setValidators([Validators.required]);
           this.contactForm.controls['venue']?.setValidators([Validators.required]);
@@ -84,12 +84,12 @@ export class ContactComponent {
     return 'mailto:info@360reimagined.co.za?'
       + 'subject=' + this.contactForm.controls['messageSubject']?.value
       + '&body='
-      + 'Name:\n' + this.contactForm.controls['fullName']?.value + '\n\n'
-      + 'Message:\n' + this.contactForm.controls['message']?.value + '\n\n'
-      + 'Date:\n' + this.contactForm.controls['date']?.value + '\n\n'
-      + 'Event Type:\n' + this.contactForm.controls['eventType']?.value + '\n\n'
-      + 'Hours:\n' + this.contactForm.controls['hours']?.value + '\n\n'
-      + 'Requirements:\n' + this.contactForm.controls['requirements']?.value + '\n\n'
+      + 'Name: %0D%0A' + this.contactForm.controls['fullName']?.value + '%0D%0A %0D%0A'
+      + 'Message: %0D%0A' + this.contactForm.controls['message']?.value + '%0D%0A %0D%0A'
+      + 'Date: %0D%0A' + this.contactForm.controls['date']?.value + '%0D%0A %0D%0A'
+      + 'Event Type: %0D%0A' + this.contactForm.controls['eventType']?.value + '%0D%0A %0D%0A'
+      + 'Hours: %0D%0A' + this.contactForm.controls['hours']?.value + '%0D%0A %0D%0A'
+      + 'Requirements: %0D%0A' + this.contactForm.controls['requirements']?.value + '%0D%0A %0D%0A'
       ;
   }
 

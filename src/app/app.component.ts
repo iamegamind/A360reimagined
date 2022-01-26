@@ -9,7 +9,7 @@ import {SidenavService} from './sidenav.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'A360reimagined';
+  title = '360reimagined';
   isSidenavOpen = false;
 
   constructor(private pageScrollService: PageScrollService,
