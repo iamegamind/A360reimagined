@@ -13,11 +13,11 @@ export class ContactComponent {
   ];
 
   messageSubjects = [
-    'Thanks!',
-    'Looking For More Info',
-    'I was not happy about something',
     'I\'m ready to book!',
-    'Pricing Please'
+    'Looking For More Info',
+    'Pricing Please',
+    'Thanks!',
+    'I was not happy about something'
   ];
   siteKey = '6Les7yEeAAAAAEFs1SOfIykmoVsUh0dVt6Uv-pOs';
 
@@ -60,27 +60,37 @@ export class ContactComponent {
   }
 
   trackFormValidity() {
-    this.contactForm.controls['messageSubject'].valueChanges
-                                               .subscribe(value => {
-                                                 console.log('message subject value: ' + value);
+    this.contactForm
+      .controls['messageSubject']
+      .valueChanges
+      .subscribe(value => {
+        console.log('message subject value: ' + value);
 
-                                                 if (value === ('Thanks!' || 'Looking For More Info' || 'I was not happy about something')) {
-                                                   this.contactForm.controls['message']?.setValidators([Validators.required]);
-                                                 } else if (value === ('I\'m ready to book!' || 'Pricing Please')) {
-                                                   this.contactForm.controls['date']?.setValidators([Validators.required]);
-                                                   this.contactForm.controls['eventType']?.setValidators([Validators.required]);
-                                                   this.contactForm.controls['venue']?.setValidators([Validators.required]);
-                                                   this.contactForm.controls['hours']?.setValidators([Validators.required]);
-                                                   this.contactForm.controls['requirements']?.setValidators([Validators.required]);
-                                                 }
-                                                 this.contactForm.updateValueAndValidity();
-                                               });
+        if (value === ('Thanks!' || 'Looking For More Info' || 'I was not happy about something')) {
+          this.contactForm.controls['message']?.setValidators([Validators.required]);
+        } else if (value === ('I\'m ready to book!' || 'Pricing Please')) {
+          this.contactForm.controls['message']?.removeValidators(Validators.required);
+          this.contactForm.controls['date']?.setValidators([Validators.required]);
+          this.contactForm.controls['eventType']?.setValidators([Validators.required]);
+          this.contactForm.controls['venue']?.setValidators([Validators.required]);
+          this.contactForm.controls['hours']?.setValidators([Validators.required, Validators.pattern('\\d{1,2}'), Validators.min(1)]);
+          this.contactForm.controls['requirements']?.setValidators([Validators.required]);
+        }
+        this.contactForm.updateValueAndValidity();
+      });
   }
 
   getMailHref() {
-    return 'mailto:team@360reimagined.co.za?'
+    return 'mailto:info@360reimagined.co.za?'
       + 'subject=' + this.contactForm.controls['messageSubject']?.value
-      + '&body=' + this.contactForm.controls['message']?.value;
+      + '&body='
+      + 'Name:\n' + this.contactForm.controls['fullName']?.value + '\n\n'
+      + 'Message:\n' + this.contactForm.controls['message']?.value + '\n\n'
+      + 'Date:\n' + this.contactForm.controls['date']?.value + '\n\n'
+      + 'Event Type:\n' + this.contactForm.controls['eventType']?.value + '\n\n'
+      + 'Hours:\n' + this.contactForm.controls['hours']?.value + '\n\n'
+      + 'Requirements:\n' + this.contactForm.controls['requirements']?.value + '\n\n'
+      ;
   }
 
   onSubmit(): void {

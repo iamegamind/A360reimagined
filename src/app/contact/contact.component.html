@@ -99,11 +99,15 @@
         <div class="md:col" *ngIf="isBooking()|| isPricingEnquiry()">
           <mat-form-field class="full-width">
             <input matInput placeholder="Number of hours"
-                   mask="00"
-                   [showMaskTyped]="true"
                    formControlName="hours">
             <mat-error *ngIf="contactForm.controls['hours'].hasError('required')">
               Hours are <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="contactForm.controls['hours'].hasError('pattern')">
+              Please enter a valid number
+            </mat-error>
+            <mat-error *ngIf="contactForm.controls['hours'].hasError('min')">
+              Hours have to be greater than 0
             </mat-error>
           </mat-form-field>
         </div>
@@ -171,8 +175,8 @@
 
   </div>
 
-  <!--    {{contactForm.value | json}}-->
-  <!--    <br/>-->
-  <!--    <br/>-->
-  <!--    valid: {{contactForm.valid}}-->
+  {{contactForm.value | json}}
+  <br/>
+  <br/>
+  valid: {{contactForm.valid}}
 </div>
