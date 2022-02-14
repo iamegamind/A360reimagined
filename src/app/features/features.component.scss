@@ -1,7 +1,4 @@
-.cont {
-
-  background-color: rgb(246, 246, 242);
-
+.container {
   .header {
     color: #76c463;
   }
@@ -9,18 +6,18 @@
   .features {
     color: rgb(82, 77, 77);
 
+    .text-template {
+      .text {
+        .feature-header {
+          font-size: 20px;
+          font-weight: bold;
+        }
 
-    .text {
+        .feature-text {
+          font-size: 16px;
 
-      .feature-header {
-        font-size: 20px;
-        font-weight: bold;
-      }
-
-      .feature-text {
-        font-size: 16px;
+        }
       }
     }
   }
 }
-

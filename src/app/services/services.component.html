@@ -1,17 +1,20 @@
-<div id="services" class="service-section p-8  sm:p-10 lg:py-8 lg:px-64" fxLayout="column" fxLayoutAlign=" center"
-     fxLayoutGap="16px">
-  <div class="service-header text-4xl font-bold text-left tracking-tight self-start md:self-center">
-    We Provide Best Quality Service
-  </div>
-  <div class="service-description md:text-center ">
-    Our 360 Reimagined video booth is available to rent for any event. Hop on the
-    platform and create your own slow-motion, 360-degree slow- motion videos by
-    yourself or in pairs. It’s the perfect addition to any corporate event,
-    school function, wedding, private party, or interactive brand activation looking
-    to separate themselves from the rest.
-  </div>
+<div class="" style="background-color: white">
+  <div id="services" class="service-section container py-8 mx-auto" style="max-width: 1440px"
+       fxLayout="column" fxLayoutAlign=" center"
+       fxLayoutGap="16px">
+    <div class="service-header text-4xl font-bold text-left tracking-tight self-start md:self-center">
+      We Provide Best Quality Service
+    </div>
+    <div class="service-description md:text-center ">
+      Our 360 Reimagined video booth is available to rent for any event. Hop on the
+      platform and create your own slow-motion, 360-degree slow- motion videos by
+      yourself or in pairs. It’s the perfect addition to any corporate event,
+      school function, wedding, private party, or interactive brand activation looking
+      to separate themselves from the rest.
+    </div>
 
-  <div class="services flex flex-col gap-10 lg:flex-row">
-    <app-service-card *ngFor="let service of services" [serviceMetadata]="service"></app-service-card>
+    <div class="services flex flex-col gap-10 lg:flex-row">
+      <app-service-card *ngFor="let service of services" [serviceMetadata]="service"></app-service-card>
+    </div>
   </div>
 </div>

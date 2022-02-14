@@ -1,16 +1,26 @@
-<div class="demo-section p-8  sm:p-10 lg:py-8 lg:px-64" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="16px">
-  <div class="demo-header text-4xl font-bold text-left tracking-tight self-start md:self-center ">360 Video Booth</div>
+<div style=" background-color: rgb(246, 246, 242)">
+  <div class="demo-section container py-8 mx-auto" style="max-width: 1440px" fxLayout="column"
+       fxLayoutAlign=" center"
+       fxLayoutGap="16px">
+    <div class="demo-header text-4xl font-bold text-left tracking-tight self-start md:self-center ">360 Video Booth
+    </div>
 
-  <div class="demo-description md:text-center leading-normal">
-    Joburg was never ready!
-    Our 360 Video Booth gives a whole new meaning to a photo booth experience. Dance, pose, be creative! Our staff will
-    ensure that you look good at every angle.
-  </div>
-  <div class="demo-video">
-    <video width="305" height="540" autoplay playsinline loop
-           [muted]="isMuted" (click)="toggleMute()" class="rounded-lg">
-      <source src="assets/360Re-ImaginedReel.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="demo-description leading-normal  md:self-center">
+      Joburg was never ready!
+      Our 360 Video Booth gives a whole new meaning to a photo booth experience. Dance, pose, be creative! Our staff
+      will
+      ensure that you look good at every angle.
+    </div>
+
+    <div class="demo-video">
+      <video width="305" height="540" autoplay playsinline loop
+             [muted]="isMuted" (click)="toggleMute()"
+             class="rounded-lg">
+        <source src="assets/360Re-ImaginedReel.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!--      </div>-->
+    </div>
+
   </div>
 </div>
