@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1644497597925,
+  "timestamp": 1644833846755,
   "index": "https://iamegamind.github.io/A360reimagined/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://iamegamind.github.io/A360reimagined/favicon.ico",
         "https://iamegamind.github.io/A360reimagined/index.html",
-        "https://iamegamind.github.io/A360reimagined/main.48966a78b96009c2.js",
+        "https://iamegamind.github.io/A360reimagined/main.8f0cf8f8c6794614.js",
         "https://iamegamind.github.io/A360reimagined/manifest.webmanifest",
         "https://iamegamind.github.io/A360reimagined/polyfills.8aae2006b5fdd1c5.js",
         "https://iamegamind.github.io/A360reimagined/runtime.cae7cfcd8d139755.js",
-        "https://iamegamind.github.io/A360reimagined/styles.eb0093a415795c70.css"
+        "https://iamegamind.github.io/A360reimagined/styles.b13ee06c174f9ac7.css"
       ],
       "patterns": []
     },
@@ -144,12 +144,12 @@
     "https://iamegamind.github.io/A360reimagined/assets/megaphone.png": "3360274e390786b4c636aaac3e063f2c0cdbff82",
     "https://iamegamind.github.io/A360reimagined/assets/megaphone.webp": "9001310c46ca66eb05b0cad7192b98511027a88d",
     "https://iamegamind.github.io/A360reimagined/favicon.ico": "3aea23cd6a2477f5a265c4166593fd4a2ed343fa",
-    "https://iamegamind.github.io/A360reimagined/index.html": "3f655e782b06017581a8f56b4e7debb07464de48",
-    "https://iamegamind.github.io/A360reimagined/main.48966a78b96009c2.js": "c439c6a9be5243f5a46227961a6227a247ee3b1a",
+    "https://iamegamind.github.io/A360reimagined/index.html": "479d922b881889be31c49f7adb48510cf10cd440",
+    "https://iamegamind.github.io/A360reimagined/main.8f0cf8f8c6794614.js": "3f6659599cdcf9ff2d7b0fce7292ebf4ff2f8b55",
     "https://iamegamind.github.io/A360reimagined/manifest.webmanifest": "31da750a2d79a4934e7295e65a08e24f2f2543cd",
     "https://iamegamind.github.io/A360reimagined/polyfills.8aae2006b5fdd1c5.js": "56d6df108457af8aa641c13faf3940bb9f11443d",
     "https://iamegamind.github.io/A360reimagined/runtime.cae7cfcd8d139755.js": "4bfc364196d5ed4d0c369f6974410e9a5721fede",
-    "https://iamegamind.github.io/A360reimagined/styles.eb0093a415795c70.css": "33072aff8899badd62b91cb6af1974a3bb223b62"
+    "https://iamegamind.github.io/A360reimagined/styles.b13ee06c174f9ac7.css": "6c307d08c2c361ffd83bfb960dc0370fe527335e"
   },
   "navigationUrls": [
     {
